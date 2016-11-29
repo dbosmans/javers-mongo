@@ -1,0 +1,37 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		//classpath 'com.sourcemuse.gradle.plugin:gradle-mongo-plugin:0.14.0'
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+	baseName = 'javers-mongo'
+	version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+	compile group: "de.flapdoodle.embed", name: "de.flapdoodle.embed.mongo", version: "1.50.3"
+    compile 'org.javers:javers-spring-boot-starter-mongo:2.7.2'
+    compile "org.springframework.boot:spring-boot-starter-data-mongodb:1.4.2.RELEASE"
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+}
