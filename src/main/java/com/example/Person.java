@@ -12,6 +12,10 @@ public class Person {
 
     private String name;
 
+    private String firstName;
+
+    private String middleName;
+
 
     public String getName() {
         return name;
@@ -19,6 +23,23 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
     public String getId() {
@@ -37,13 +58,17 @@ public class Person {
         Person person = (Person) o;
 
         if (id != null ? !id.equals(person.id) : person.id != null) return false;
-        return name != null ? name.equals(person.name) : person.name == null;
+        if (name != null ? !name.equals(person.name) : person.name != null) return false;
+        if (firstName != null ? !firstName.equals(person.firstName) : person.firstName != null) return false;
+        return middleName != null ? middleName.equals(person.middleName) : person.middleName == null;
     }
 
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (middleName != null ? middleName.hashCode() : 0);
         return result;
     }
 }

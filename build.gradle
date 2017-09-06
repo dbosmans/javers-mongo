@@ -31,7 +31,7 @@ dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
     compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
     compile 'org.javers:javers-spring-boot-starter-mongo:2.7.2'
-	testcompile group: "de.flapdoodle.embed", name: "de.flapdoodle.embed.mongo", version: "1.50.3"
+	compile group: "de.flapdoodle.embed", name: "de.flapdoodle.embed.mongo", version: "1.50.3"
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
 }
